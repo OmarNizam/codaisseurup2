@@ -10,5 +10,5 @@ class Event < ApplicationRecord
   validates :includes_drinks, presence: false
   validates :starts_at, presence: false
   validates :ends_at, presence: false
-  validates :active, presence: false
+  validates :active, presence: true
 end
