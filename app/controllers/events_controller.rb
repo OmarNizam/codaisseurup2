@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def show
     @categories = @event.categories
     @photos = @event.photos
-    
+
   end
 
   def new
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    if current_user.id == @event.user.id
+    if current_user.id == @event.user.id  # checking if the current user is the same user who create this event
       @photos = @event.photos
     else
       redirect_to root_path, notice: "You don't have permission."
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
 
 def update
   if @event.update(event_params)
-    image_params.each do |image|
+      image_params.each do |image|
       @event.photos.create(image: image)
     end
 
