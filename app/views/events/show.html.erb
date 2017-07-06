@@ -25,7 +25,8 @@
     <p>Host: <%= @event.user.email %></p>
     <p>Price: <%= @event.price %></p>
     <p>Capacity: <%= @event.capacity%> <%= @event.capacity > 1 ? "guests" : "guests" %></p>
-    <p>Date: <%= @event.starts_at %></p>
+    <p>Start Date: <%= @event.starts_at %></p>
+    <p>end Date: <%= @event.ends_at %></p>
 
      <!-- Amenities -->
     <h4>Amenities</h4>
@@ -45,7 +46,7 @@
     <% @photos.each do |photo| %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <% image_tag photo.image.thumbnail %>
+          <%= image_tag photo.image %>
         </div>
       </div>
     <% end %>
@@ -57,4 +58,4 @@
 
 </div>
 
-<%= link_to "Blck", events_path, class: "btn btn-default" %>
+<%= link_to "Back", events_path, class: "btn btn-default" %>
