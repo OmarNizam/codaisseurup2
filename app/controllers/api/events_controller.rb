@@ -29,6 +29,16 @@ class Api::EventsController < ApplicationController
         errors: event.errors
       }.to_json
     end
+
+  end
+
+  def destroy
+    event = Event.find(params[:id])
+    event.destroy
+
+    render status: 200, json: {
+      message: "Room successfully deleted"
+    }.to_json
   end
 
 

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :photos
 
   namespace :api do
-    resources :events, only: [:index, :show, :create]
+    resources :events, only: [:index, :show, :create, :destroy]
 
   end
 end
